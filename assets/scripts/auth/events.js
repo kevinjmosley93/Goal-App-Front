@@ -7,7 +7,7 @@ const signUpClick = (event) => {
   event.preventDefault();
   const form = event.target;
   const data = getFormInfo(form);
-  api.signUp(data).then(ui.signUpPass).catch();
+  api.signUp(data).then(ui.signUpPass).catch(ui.signUpFail);
   console.log("data is:", data);
   console.log("event is:", event);
 };

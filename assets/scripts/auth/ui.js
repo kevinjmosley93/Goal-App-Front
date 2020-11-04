@@ -6,8 +6,14 @@ const signUpPass = (res) => {
   $("#message").text(
     `Thanks for signing up ${res.user.email}! Sign In to Play`
   );
+  $("#sign-up-form").trigger("reset");
+};
+
+const signUpFail = () => {
+  $("#message").text("Looks like something went wrong. Try Again!");
 };
 
 module.exports = {
   signUpPass,
+  signUpFail,
 };
