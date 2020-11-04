@@ -13,52 +13,52 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
-<body>
-  <h1 class="text-center">Track A Goal</h1>
+<body class="bg-secondary">
+  <h1 class="text-center text-light">Track A Goal</h1>
   <form id='sign-up-form'>
-    <div id="form-container" class="container bd w-25">
-      <h1 class="text-center">Sign-Up</h1>
+    <div id="form-container" class="container bg-dark bd w-25">
+      <h1 class="text-center text-light bg-success">Sign-Up</h1>
       <div class="form-group">
-        <label for="sign-up-email">Email:</label>
+        <label class="text-light" for="sign-up-email">Email:</label>
         <input class="form-control shadow-lg" type="email" name="credentials[email]" id="sign-up-email"
-          placeholder="Exam@example.com">
+          placeholder="TrackingMySuccess@BillionaireJourney.com">
       </div>
       <!-- Password -->
       <div id="form-group">
-        <label for="sign-up-password">Password:</label>
+        <label class="text-light" for="sign-up-password">Password:</label>
         <input class="form-control shadow-lg" id="sign-up-password" type="password" name="credentials[password]"
           placeholder="Password">
       </div>
       <!-- ReEnter Password -->
       <div id="form-group">
-        <label for="sign-up-password_confirm">Password Confirm:</label>
+        <label class="text-light" for="sign-up-password_confirm">Password Confirm:</label>
         <input class="form-control shadow-lg" id="sign-up-password_confirm" type="password"
           name="credentials[password_confirmation]" placeholder="Confirm Password">
         <br>
-        <input class="btn btn-info float-right shadow-lg" type="submit" value="SIGN UP">
+        <input class="btn btn-success  shadow-lg" type="submit" value="SIGN UP">
       </div>
     </div>
   </form>
   <br>
   <br>
-  <div id="form-container" class="container rounded w-25">
-    <h1 class="text-center">Sign-In</h1>
+  <div id="form-container" class="container bg-dark rounded w-25">
+    <h1 class="text-center text-light bg-success">Sign-In</h1>
     <!-- Sign In Form -->
     <form id="sign-in-form">
       <!-- Email -->
       <div class=" form-group shadow-lg">
-        <label for="sign-in-email">Email:</label>
+        <label class="text-light" for="sign-in-email">Email:</label>
         <input class="form-control" type="email" name="credentials[email]" id="sign-in-email"
-          placeholder="Exam@example.com" required>
+          placeholder="TrackingMySuccess@BillionaireJourney.com" required>
       </div>
       <!-- Password -->
       <div id="form-group">
-        <label for="sign-in-password">Password:</label>
+        <label class="text-light" for="sign-in-password">Password:</label>
         <input class="form-control  shadow-lg" id="sign-in-password" type="password" name="credentials[password]"
           placeholder="Password" required>
       </div>
       <br>
-      <input class="btn btn-info float-right" type="submit" value="SIGN IN">
+      <input class="btn btn-success" type="submit" value="SIGN IN">
     </form>
   </div>
 </body>
