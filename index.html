@@ -15,14 +15,21 @@
 
 <body class="bg-secondary">
   <h1 class="text-center text-light">Track A Goal</h1>
+  <!-- Sign Out -->
+  <form id='sign-out'>
+    <input class="btn text-light float left" type='submit' value='SIGN OUT'>
+  </form>
+  <!-- Message Text -->
   <h2 id="message" class="text-center text-light"></h2>
+  <!-- Sign Up -->
   <form id='sign-up-form'>
     <div id="form-container" class="container bg-dark bd w-25">
       <h1 class="text-center text-light bg-success">Sign-Up</h1>
+      <!-- Email -->
       <div class="form-group">
         <label class="text-light" for="sign-up-email">Email:</label>
         <input class="form-control shadow-lg" type="email" name="credentials[email]" id="sign-up-email"
-          placeholder="TrackingMySuccess@BillionaireJourney.com">
+          placeholder="TrackingMySuccess@Billionaire.com">
       </div>
       <!-- Password -->
       <div id="form-group">
@@ -42,15 +49,15 @@
   </form>
   <br>
   <br>
+  <!-- Sign In -->
   <div id="form-container" class="container bg-dark rounded w-25">
-    <h1 class="text-center text-light bg-success">Sign-In</h1>
-    <!-- Sign In Form -->
     <form id="sign-in-form">
+      <h1 class="text-center text-light bg-success">Sign-In</h1>
       <!-- Email -->
       <div class=" form-group shadow-lg">
         <label class="text-light" for="sign-in-email">Email:</label>
         <input class="form-control" type="email" name="credentials[email]" id="sign-in-email"
-          placeholder="TrackingMySuccess@BillionaireJourney.com" required>
+          placeholder="TrackingMySuccess@Billionaire.com" required>
       </div>
       <!-- Password -->
       <div id="form-group">
@@ -62,6 +69,50 @@
       <input class="btn btn-success" type="submit" value="SIGN IN">
     </form>
   </div>
+  <!-- Change Password -->
+  <form id="change-password-form" class="container">
+    <h1 class="text-center text-light bg-success">Change Password</h1>
+    <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
+    <input class="form-control" type="password" name="passwords[new]" placeholder="New Password">
+    <input class="btn btn-success" type="submit" value="CHANGE PASSWORD">
+  </form>
+  <!-- Create Goal -->
+  <form id='goal-form'>
+    <div id="form-container" class="container bg-dark bd w-25">
+      <h1 class="text-center text-light bg-success">Create Goal</h1>
+      <!-- TITLE -->
+      <div id="form-group">
+        <label class="text-light" for="title">Title:</label>
+        <input class="form-control shadow-lg" id="title" type="text" name="goal[title]" placeholder="Be a better person"
+          required>
+      </div>
+      <!-- Start Date -->
+      <div class="form-group">
+        <label class="text-light" for="date">Start Date :</label>
+        <input class="form-control shadow-lg" type="date" name="goal[date]" id="date" required>
+      </div>
+      <!-- Goal Text -->
+      <div id="form-group">
+        <label class="text-light" for="goalText">Goal:</label>
+        <textarea class="form-control shadow-lg" id="goalText" name="goal[goalText]"
+          placeholder="Be a better person because my family is depending on me!" required></textarea>
+      </div>
+      <!-- Obstacles -->
+      <div id="form-group">
+        <label class="text-light" for="obstacles">Obstacles:</label>
+        <textarea class="form-control shadow-lg" id="obstacles" name="goal[obstacles]"
+          placeholder="What's holding you back?" required></textarea>
+      </div>
+      <!-- Finish By -->
+      <div id="form-group">
+        <label class="text-light" for="finishBy">Complete Goal By:</label>
+        <input class="form-control shadow-lg" id="finishBy" type="date" name="goal[finishBy]" required>
+      </div>
+      <br>
+      <input class="goalbtn btn btn-success  shadow-lg" type="submit" value="CREATE">
+    </div>
+    </div>
+  </form>
 </body>
 
 </html>

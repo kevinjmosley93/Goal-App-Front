@@ -20,7 +20,29 @@ const signIn = (data) => {
   });
 };
 
+const signOut = (data) => {
+  return $.ajax({
+    url: `${config.apiUrl}/sign-out`,
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${store.user.token}`,
+    },
+    data: data,
+  });
+};
+const changePassword = (data) => {
+  return $.ajax({
+    url: `${config.apiUrl}/change-password`,
+    method: "PATCH",
+    headers: {
+      Authorization: `Bearer ${store.user.token}`,
+    },
+    data: data,
+  });
+};
 module.exports = {
   signUp,
   signIn,
+  signOut,
+  changePassword,
 };
