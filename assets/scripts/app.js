@@ -19,4 +19,5 @@ $(() => {
   $("#sign-out").on("submit", authEvents.signOutClick);
   $("#change-password-form").on("submit", authEvents.changePasswordClick);
   $("#goal-form").on("submit", goalEvents.createGoalClick);
+  $("#all-goals-form").on("submit", goalEvents.allGoalsClick);
 });

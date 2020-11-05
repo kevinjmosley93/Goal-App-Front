@@ -23,14 +23,17 @@ const signInPass = (res) => {
 const signOutPass = () => {
   store.user = null;
   $("#message").text("");
+  $("#goal-message").text("");
   $("#change-password-form").hide();
   $("#sign-out").hide();
   $("#sign-up-form").show();
   $("#sign-in-form").show();
+  $("#goal-form").hide();
 };
 
 const onChangePasswordPass = () => {
   $("#message").text("Password changed successfully!");
+  $("#goal-message").text("");
   $("#change-password-form").trigger("reset");
 };
 
