@@ -15,16 +15,27 @@
 
 <body class="bg-secondary">
   <h1 class="text-center text-light">Track A Goal</h1>
-  <!-- Sign Out -->
-  <form id='sign-out'>
-    <input class="btn text-light float left" type='submit' value='SIGN OUT'>
+  <!-- Show All Goals -->
+  <form id='all-goals-form' class="container">
+    <input class="w-100 btn btn-success text-light " type="submit" value="ALL GOALS">
   </form>
+  <!-- Button trigger modal -->
+  <section class="container">
+    <input type="button" class="create-model-btn btn btn-success w-100" data-toggle="modal"
+      data-target="#createGoalModel" value='CREATE GOAL'>
+  </section>
+
+  <!-- Sign Out -->
+  <form id='sign-out' class="container">
+    <input class=" w-100 btn btn-success text-light " type='submit' value='SIGN OUT'>
+  </form>
+  <br>
   <!-- Message Text -->
   <h2 id="message" class="text-center text-light"></h2>
-  <h2 id="goal-message" class="text-center text-light"></h2>
+  <h2 id="success-goal-message" class="text-center text-light"></h2>
   <!-- Sign Up -->
   <form id='sign-up-form'>
-    <div id="form-container" class="container bg-dark bd w-25">
+    <div id="form-container" class="container bg-dark bd w-50">
       <h1 class="text-center text-light bg-success">Sign-Up</h1>
       <!-- Email -->
       <div class="form-group">
@@ -51,7 +62,7 @@
   <br>
   <br>
   <!-- Sign In -->
-  <div id="form-container" class="container bg-dark rounded w-25">
+  <div id="form-container" class="container bg-dark rounded w-50">
     <form id="sign-in-form">
       <h1 class="text-center text-light bg-success">Sign-In</h1>
       <!-- Email -->
@@ -71,57 +82,67 @@
     </form>
   </div>
   <!-- Change Password -->
-  <form id="change-password-form" class="container">
+  <form id="change-password-form" class="container bg-dark container bd w-50">
     <h1 class="text-center text-light bg-success">Change Password</h1>
     <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
     <input class="form-control" type="password" name="passwords[new]" placeholder="New Password">
     <input class="btn btn-success" type="submit" value="CHANGE PASSWORD">
   </form>
-  <!-- Create Goal -->
-  <form id='goal-form'>
-    <div id="form-container" class="container bg-dark bd w-25">
-      <h1 class="text-center text-light bg-success">Create Goal</h1>
-      <!-- TITLE -->
-      <div id="form-group">
-        <label class="text-light" for="title">Title:</label>
-        <input class="form-control shadow-lg" id="title" type="text" name="goal[title]" placeholder="Be a better person"
-          required>
-      </div>
-      <!-- Start Date -->
-      <div class="form-group">
-        <label class="text-light" for="date">Start Date :</label>
-        <input class="form-control shadow-lg" type="date" name="goal[date]" id="date" required>
-      </div>
-      <!-- Goal Text -->
-      <div id="form-group">
-        <label class="text-light" for="goalText">Goal:</label>
-        <textarea class="form-control shadow-lg" id="goalText" name="goal[goalText]"
-          placeholder="Be a better person because my family is depending on me!" required></textarea>
-      </div>
-      <!-- Obstacles -->
-      <div id="form-group">
-        <label class="text-light" for="obstacles">Obstacles:</label>
-        <textarea class="form-control shadow-lg" id="obstacles" name="goal[obstacles]"
-          placeholder="What's holding you back?" required></textarea>
-      </div>
-      <!-- Finish By -->
-      <div id="form-group">
-        <label class="text-light" for="finishBy">Complete Goal By:</label>
-        <input class="form-control shadow-lg" id="finishBy" type="date" name="goal[finishBy]" required>
-      </div>
-      <br>
-      <input class="goalbtn btn btn-success  shadow-lg" type="submit" value="CREATE">
-    </div>
-  </form>
-  <!-- Show All Goals -->
-  <form id='all-goals-form'>
-    <div id="form-container" class="container bd w-25">
-      <!-- All Goals BTN -->
-      <input class="btn btn-success shadow-lg" type="submit" value="ALL GOALS">
-    </div>
-  </form>
-  <p id="goals"></p>
 
+  <p id="goals"></p>
+  <!-- Create Modal -->
+  <div class="modal fade " id="createGoalModel" tabindex="-1" role="dialog" aria-labelledby="createGoalModel"
+    aria-hidden="true">
+    <div class="modal-dialog " role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-header bg-dark">
+          <h2 id="goal-message" class="text-center text-light"></h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span class="text-light" aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Create Goal -->
+          <form id='goal-form'>
+            <div id="form-container" class="container bg-dark w-100">
+              <h1 class="text-center text-light bg-success">Create Goal</h1>
+              <!-- TITLE -->
+              <div id="form-group">
+                <label class="text-light" for="title">Title:</label>
+                <input class="form-control shadow-lg" id="title" type="text" name="goal[title]"
+                  placeholder="Be a better person" required>
+              </div>
+              <!-- Start Date -->
+              <div class="form-group">
+                <label class="text-light" for="date">Start Date :</label>
+                <input class="form-control shadow-lg" type="date" name="goal[date]" id="date" required>
+              </div>
+              <!-- Goal Text -->
+              <div id="form-group">
+                <label class="text-light" for="goalText">Goal:</label>
+                <textarea class="form-control shadow-lg" id="goalText" name="goal[goalText]"
+                  placeholder="Be a better person because my family is depending on me!" required></textarea>
+              </div>
+              <!-- Obstacles -->
+              <div id="form-group">
+                <label class="text-light" for="obstacles">Obstacles:</label>
+                <textarea class="form-control shadow-lg" id="obstacles" name="goal[obstacles]"
+                  placeholder="What's holding you back?" required></textarea>
+              </div>
+              <!-- Finish By -->
+              <div id="form-group">
+                <label class="text-light" for="finishBy">Complete Goal By:</label>
+                <input class="form-control shadow-lg" id="finishBy" type="date" name="goal[finishBy]" required>
+              </div>
+              <br>
+              <input class="goalbtn btn btn-success  shadow-lg" type="submit" value="CREATE">
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

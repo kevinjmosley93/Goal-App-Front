@@ -14,7 +14,9 @@ const signInPass = (res) => {
   $("#message").text(`${res.user.email} is signed in!`);
   $("#sign-in-form").trigger("reset");
   $("#change-password-form").show();
+  $("#all-goals-form").show();
   $("#sign-out").show();
+  $(".create-model-btn").show();
   $("#goal-form").show();
   $("#sign-up-form").hide();
   $("#sign-in-form").hide();
@@ -22,18 +24,23 @@ const signInPass = (res) => {
 
 const signOutPass = () => {
   store.user = null;
+  $("#goals").text("");
   $("#message").text("");
   $("#goal-message").text("");
+  $("#success-goal-message").text("");
   $("#change-password-form").hide();
+  $("#all-goals-form").hide();
   $("#sign-out").hide();
   $("#sign-up-form").show();
   $("#sign-in-form").show();
+  $(".create-model-btn").hide();
   $("#goal-form").hide();
 };
 
 const onChangePasswordPass = () => {
   $("#message").text("Password changed successfully!");
   $("#goal-message").text("");
+  $("#success-goal-message").text("");
   $("#change-password-form").trigger("reset");
 };
 

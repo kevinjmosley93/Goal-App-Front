@@ -1,26 +1,34 @@
 const store = require("../store");
 
 const goalCreatedPass = () => {
-  $("#goal-message").text("Goal Created!");
-  $("#goal-form").hide();
+  $("#goal-message").text("Goal Created! Click anywhere to close!");
   $("#goal-form").trigger("reset");
 };
 
 const allGoalSuccess = (res) => {
+  $("#success-goal-message").text("All your goals are below!");
+  $("#change-password-form").hide();
   const allGoals = res.goal;
   allGoals.forEach((goal) => {
     const selector = "#goals";
-    console.log("each goals:", goal);
+    console.log("each goal:", goal);
     $(selector).append(`
-<div class="card container w-25" style="width: 18rem;">
-  <h1 class='border border-success '>Owner: ${goal.owner.email}</h1>
-  <ul class="list-group list-group-flush">
-    <li class='list-group-item'>Title: ${goal.title}</li>
-    <li class='list-group-item'>Date: ${goal.date}</li>
-    <li class='list-group-item'>Complete By: ${goal.finishBy}</li>
-    <li class='list-group-item'>Goal: ${goal.goalText}</li>
-  </ul>
-</div>
+<div class="row ">
+    <div class="col">
+      <div class="card bg-dark container bd w-50">
+        <div class="card-body text-light">
+          <h3 class="card-title">Title: "${goal.title}"</h3>
+          <small>Date: ${goal.date}</small>
+          <h6 class="pt-2 card-text">Goal: ${goal.goalText}</h6>
+          <small>Complete By: ${goal.finishBy}</small>
+          <br>
+          <input class="btn btn-success  shadow-lg float-left" type="submit" value="UPDATE GOAL">
+          <input class="btn btn-success  shadow-lg float-right" type="submit" value="DELETE GOAL">
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
     `);
   });
 
@@ -33,7 +41,7 @@ const allGoalSuccess = (res) => {
 };
 
 const allGoalFailure = (res) => {
-  $("#goal-message").text("Error!! Please Try Again!");
+  $("#success-goal-message").text("Error!! Please Try Again!");
 };
 module.exports = {
   goalCreatedPass,

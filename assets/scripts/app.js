@@ -12,7 +12,11 @@ $(() => {
   //hidden on page load
   $("#change-password-form").hide();
   $("#sign-out").hide();
+  $(".create-model-btn").hide();
   $("#goal-form").hide();
+  $("#all-goals-form").hide();
+  // $("#sign-up-form").hide();
+  // $("#sign-in-form").hide();
   //Events
   $("#sign-up-form").on("submit", authEvents.signUpClick);
   $("#sign-in-form").on("submit", authEvents.signInClick);
