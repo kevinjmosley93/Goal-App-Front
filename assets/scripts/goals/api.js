@@ -25,15 +25,14 @@ const getAllGoals = () => {
 };
 
 const updateGoal = (data) => {
-  const goalId = store.goal;
-  console.log("goal id", goalId);
+  console.log("api data ", store.goal);
+
   return $.ajax({
-    url: `${config.apiUrl}/goals/${goalId}`,
+    url: `${config.apiUrl}/goals/${store.goal._id}`,
     method: "PATCH",
     headers: {
       Authorization: `Bearer ${store.user.token}`,
     },
-    user: store.user,
     data: data,
   });
 };

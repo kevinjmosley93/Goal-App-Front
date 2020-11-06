@@ -26,7 +26,7 @@ const signInPass = (res) => {
 const signOutPass = () => {
   store.user = null;
   $("#goals").text("");
-  $("#message").text("");
+  $("#message").text("Signed out successfully");
   $("#goal-message").text("");
   $("#success-goal-message").text("");
   $(".change-password-model-btn").hide();

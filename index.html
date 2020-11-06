@@ -90,10 +90,11 @@
       <input class="btn btn-success" type="submit" value="SIGN IN">
     </form>
   </div>
+
   <!-- Change Password Modal -->
   <div class="modal fade" id="changePasswordModel" tabindex="-1" role="dialog" aria-labelledby="changePasswordModel"
     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered container" role="document">
+    <div class="modal-dialog container" role="document">
       <div class="modal-content bg-dark">
         <div class="modal-header">
           <h5 class="modal-title text-center text-light" id="change-password-form-message"></h5>
@@ -140,7 +141,8 @@
               <!-- Start Date -->
               <div class="form-group">
                 <label class="text-light" for="date">Start Date :</label>
-                <input class="form-control shadow-lg" type="date" name="goal[date]" id="date" required>
+                <input class="form-control shadow-lg" type="text" name="goal[date]" id="date" placeholder="11/5/2020"
+                  required>
               </div>
               <!-- Goal Text -->
               <div id="form-group">
@@ -157,7 +159,8 @@
               <!-- Finish By -->
               <div id="form-group">
                 <label class="text-light" for="finishBy">Complete Goal By:</label>
-                <input class="form-control shadow-lg" id="finishBy" type="date" name="goal[finishBy]" required>
+                <input class="form-control shadow-lg" id="finishBy" type="text" name="goal[finishBy]"
+                  placeholder="11/5/2020 or Lifetime" required>
               </div>
               <br>
               <input class="goalbtn btn btn-success  shadow-lg" type="submit" value="CREATE">
@@ -165,6 +168,64 @@
           </form>
         </div>
 
+      </div>
+    </div>
+  </div>
+  <!-- Update Goal button modal -->
+  <!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateModal">
+    UPDATE GOAL
+  </button> -->
+
+  <!-- Update Modal -->
+  <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content container bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-light" id="update-goal-message"></h5>
+          <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='update-goal-form'>
+            <div id="form-container" class="container bg-dark w-100">
+              <h1 class="text-center text-light bg-success shadow-lg">Update Goal</h1>
+              <!-- TITLE -->
+              <div id="form-group">
+                <label class="text-light" for="title">Title:</label>
+                <input class="form-control shadow-lg" id="title" type="text" name="goal[title]"
+                  placeholder="Be a better person">
+              </div>
+              <!-- Start Date -->
+              <div class="form-group">
+                <label class="text-light" for="date">Start Date :</label>
+                <input class="form-control shadow-lg" type="text" name="goal[date]" id="date" placeholder="11/5/2020">
+              </div>
+              <!-- Goal Text -->
+              <div id="form-group">
+                <label class="text-light" for="goalText">Goal:</label>
+                <textarea class="form-control shadow-lg" id="goalText" name="goal[goalText]"
+                  placeholder="Be a better person because my family is depending on me!"></textarea>
+              </div>
+              <!-- Obstacles -->
+              <div id="form-group">
+                <label class="text-light" for="obstacles">Obstacles:</label>
+                <textarea class="form-control shadow-lg" id="obstacles" name="goal[obstacles]"
+                  placeholder="What's holding you back?"></textarea>
+              </div>
+              <!-- Finish By -->
+              <div id="form-group">
+                <label class="text-light" for="finishBy">Complete Goal By:</label>
+                <input class="form-control shadow-lg" id="finishBy" type="text" name="goal[finishBy]"
+                  placeholder="11/5/2020 or Lifetime">
+              </div>
+              <br>
+              <input class="update-btn btn btn-success  shadow-lg" type="submit" value="UPDATE">
+            </div>
+          </form>
+
+        </div>
       </div>
     </div>
   </div>
