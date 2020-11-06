@@ -4,7 +4,7 @@ const signUpPass = (res) => {
   store.user = res.user;
   console.log("user data:", store.user);
   $("#message").text(
-    `Thanks for signing up ${res.user.email}! Sign In to Play`
+    `Thanks for signing up ${res.user.email}! Sign In to track your future success!`
   );
   $("#sign-up-form").trigger("reset");
 };
@@ -13,6 +13,7 @@ const signInPass = (res) => {
   store.user = res.user;
   $("#message").text(`${res.user.email} is signed in!`);
   $("#sign-in-form").trigger("reset");
+  $(".change-password-model-btn").show();
   $("#change-password-form").show();
   $("#all-goals-form").show();
   $("#sign-out").show();
@@ -28,6 +29,7 @@ const signOutPass = () => {
   $("#message").text("");
   $("#goal-message").text("");
   $("#success-goal-message").text("");
+  $(".change-password-model-btn").hide();
   $("#change-password-form").hide();
   $("#all-goals-form").hide();
   $("#sign-out").hide();
@@ -38,14 +40,16 @@ const signOutPass = () => {
 };
 
 const onChangePasswordPass = () => {
-  $("#message").text("Password changed successfully!");
+  $("#change-password-form-message").text("Password changed successfully!");
   $("#goal-message").text("");
   $("#success-goal-message").text("");
   $("#change-password-form").trigger("reset");
 };
 
 const onChangePasswordFail = () => {
-  $("#message").text("Error on change password, Please try again!");
+  $("#change-password-form-message").text(
+    "Error on change password, Please try again!"
+  );
 };
 
 const signUpFail = () => {

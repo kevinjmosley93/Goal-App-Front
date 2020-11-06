@@ -7,7 +7,7 @@ const goalCreatedPass = () => {
 
 const allGoalSuccess = (res) => {
   $("#success-goal-message").text("All your goals are below!");
-  $("#change-password-form").hide();
+  // $(".change-password-model-btn").hide();
   const allGoals = res.goal;
   allGoals.forEach((goal) => {
     const selector = "#goals";
@@ -15,12 +15,12 @@ const allGoalSuccess = (res) => {
     $(selector).append(`
 <div class="row ">
     <div class="col">
-      <div class="card bg-dark container bd w-50">
+      <div class="card bg-dark container bd w-50 shadow-lg">
         <div class="card-body text-light">
-          <h3 class="card-title">Title: "${goal.title}"</h3>
-          <small>Date: ${goal.date}</small>
+          <h3 class="card-title text-center">"${goal.title}"</h3>
+          <small class='text-secondary shadow-lg'>Date: ${goal.date}</small>
           <h6 class="pt-2 card-text">Goal: ${goal.goalText}</h6>
-          <small>Complete By: ${goal.finishBy}</small>
+          <small class='text-secondary shadow-lg'>Complete By: ${goal.finishBy}</small>
           <br>
           <input class="btn btn-success  shadow-lg float-left" type="submit" value="UPDATE GOAL">
           <input class="btn btn-success  shadow-lg float-right" type="submit" value="DELETE GOAL">

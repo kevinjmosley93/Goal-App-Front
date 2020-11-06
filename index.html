@@ -9,34 +9,43 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Do not add `script` tags-->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Titillium+Web:wght@700&display=swap');
+  </style>
+
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
 <body class="bg-secondary">
-  <h1 class="text-center text-light">Track A Goal</h1>
+  <h1 class="text-center text-light shadow-lg container w-50">Track A Goal</h1>
+  <br>
   <!-- Show All Goals -->
   <form id='all-goals-form' class="container">
     <input class="w-100 btn btn-success text-light " type="submit" value="ALL GOALS">
   </form>
-  <!-- Button trigger modal -->
+  <!-- Goal button modal -->
   <section class="container">
     <input type="button" class="create-model-btn btn btn-success w-100" data-toggle="modal"
       data-target="#createGoalModel" value='CREATE GOAL'>
   </section>
-
+  <!-- Change Password button modal -->
+  <section class="container">
+    <input type="button" class="change-password-model-btn btn btn-success w-100" data-toggle="modal"
+      data-target="#changePasswordModel" value='CHANGE PASSWORD'>
+  </section>
   <!-- Sign Out -->
   <form id='sign-out' class="container">
     <input class=" w-100 btn btn-success text-light " type='submit' value='SIGN OUT'>
   </form>
   <br>
   <!-- Message Text -->
-  <h2 id="message" class="text-center text-light"></h2>
-  <h2 id="success-goal-message" class="text-center text-light"></h2>
+  <h2 id="message" class="text-center text-light shadow-lg container w-50"></h2>
+  <h2 id="success-goal-message" class="text-center text-light shadow-lg container w-50"></h2>
   <!-- Sign Up -->
   <form id='sign-up-form'>
     <div id="form-container" class="container bg-dark bd w-50">
-      <h1 class="text-center text-light bg-success">Sign-Up</h1>
+      <h1 class="text-center text-light bg-success shadow-lg">Sign-Up</h1>
       <!-- Email -->
       <div class="form-group">
         <label class="text-light" for="sign-up-email">Email:</label>
@@ -64,7 +73,7 @@
   <!-- Sign In -->
   <div id="form-container" class="container bg-dark rounded w-50">
     <form id="sign-in-form">
-      <h1 class="text-center text-light bg-success">Sign-In</h1>
+      <h1 class="text-center text-light bg-success shadow-lg">Sign-In</h1>
       <!-- Email -->
       <div class=" form-group shadow-lg">
         <label class="text-light" for="sign-in-email">Email:</label>
@@ -81,13 +90,29 @@
       <input class="btn btn-success" type="submit" value="SIGN IN">
     </form>
   </div>
-  <!-- Change Password -->
-  <form id="change-password-form" class="container bg-dark container bd w-50">
-    <h1 class="text-center text-light bg-success">Change Password</h1>
-    <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
-    <input class="form-control" type="password" name="passwords[new]" placeholder="New Password">
-    <input class="btn btn-success" type="submit" value="CHANGE PASSWORD">
-  </form>
+  <!-- Change Password Modal -->
+  <div class="modal fade" id="changePasswordModel" tabindex="-1" role="dialog" aria-labelledby="changePasswordModel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered container" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-center text-light" id="change-password-form-message"></h5>
+          <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body container">
+          <form id="change-password-form" class="bg-dark bd w-100">
+            <h1 class="text-center text-light bg-success shadow-lg">Change Password</h1>
+            <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
+            <input class="form-control" type="password" name="passwords[new]" placeholder="New Password">
+            <input class="change-password-btn btn btn-success" type="submit" value="CHANGE PASSWORD">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <p id="goals"></p>
   <!-- Create Modal -->
@@ -105,7 +130,7 @@
           <!-- Create Goal -->
           <form id='goal-form'>
             <div id="form-container" class="container bg-dark w-100">
-              <h1 class="text-center text-light bg-success">Create Goal</h1>
+              <h1 class="text-center text-light bg-success shadow-lg">Create Goal</h1>
               <!-- TITLE -->
               <div id="form-group">
                 <label class="text-light" for="title">Title:</label>

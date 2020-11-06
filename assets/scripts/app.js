@@ -10,6 +10,7 @@ const goalEvents = require("./goals/events");
 
 $(() => {
   //hidden on page load
+  $(".change-password-model-btn").hide();
   $("#change-password-form").hide();
   $("#sign-out").hide();
   $(".create-model-btn").hide();
