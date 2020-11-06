@@ -22,8 +22,8 @@ const allGoalSuccess = (res) => {
           <h6 class="pt-2 card-text">Goal: ${goal.goalText}</h6>
           <small class='text-secondary shadow-lg'>Complete By: ${goal.finishBy}</small>
           <br>
-          <input class="btn btn-success  shadow-lg float-left" type="submit" value="UPDATE GOAL">
-          <input class="btn btn-success  shadow-lg float-right" type="submit" value="DELETE GOAL">
+          <input id='update-goal-model-btn' class="btn btn-success  shadow-lg float-left" type="submit" value="UPDATE GOAL">
+          <input id='delete-goal-model-btn' class="btn btn-success  shadow-lg float-right" type="submit" value="DELETE GOAL">
         </div>
       </div>
     </div>
