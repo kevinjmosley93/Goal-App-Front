@@ -24,7 +24,22 @@ const getAllGoals = () => {
   });
 };
 
+const updateGoal = (data) => {
+  const goalId = store.goal;
+  console.log("goal id", goalId);
+  return $.ajax({
+    url: `${config.apiUrl}/goals/${goalId}`,
+    method: "PATCH",
+    headers: {
+      Authorization: `Bearer ${store.user.token}`,
+    },
+    user: store.user,
+    data: data,
+  });
+};
+
 module.exports = {
   createGoal,
   getAllGoals,
+  updateGoal,
 };

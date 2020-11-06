@@ -4,6 +4,12 @@ const goalCreatedPass = () => {
   $("#goal-message").text("Goal Created! Click anywhere to close!");
   $("#goal-form").trigger("reset");
 };
+const goalUpdatePass = (res) => {
+  store.goal = res.goal._id;
+  console.log("ui data:", store.goal);
+  $("#update-goal-message").text("Goal Created! Click anywhere to close!");
+  $("#-update-goal-form").trigger("reset");
+};
 
 const allGoalSuccess = (res) => {
   $("#success-goal-message").text("All your goals are below!");
@@ -17,6 +23,7 @@ const allGoalSuccess = (res) => {
     <div class="col">
       <div class="card bg-dark container bd w-50 shadow-lg">
         <div class="card-body text-light">
+          <small class='text-secondary shadow-lg'>Goal: ${goal._id}</small>
           <h3 class="card-title text-center">"${goal.title}"</h3>
           <small class='text-secondary shadow-lg'>Date: ${goal.date}</small>
           <h6 class="pt-2 card-text">Goal: ${goal.goalText}</h6>
@@ -46,5 +53,6 @@ const allGoalFailure = (res) => {
 module.exports = {
   goalCreatedPass,
   allGoalSuccess,
+  goalUpdatePass,
   allGoalFailure,
 };
