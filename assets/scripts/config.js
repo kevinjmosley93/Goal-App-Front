@@ -2,7 +2,7 @@
 
 let apiUrl;
 const apiUrls = {
-  production: "https://track-a-goal-app.herokuapp.com/",
+  production: "https://track-a-goal-app.herokuapp.com",
   development: "http://localhost:4741",
 };
 
