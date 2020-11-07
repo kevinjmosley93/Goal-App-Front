@@ -26,4 +26,5 @@ $(() => {
   $("#goal-form").on("submit", goalEvents.createGoalClick);
   $("#all-goals-form").on("submit", goalEvents.allGoalsClick);
   $("#update-goal-form").on("submit", goalEvents.updateGoalClick);
+  $("#delete-goal-model-btn").on("submit", goalEvents.deleteGoalClick);
 });

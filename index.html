@@ -229,6 +229,31 @@
       </div>
     </div>
   </div>
+  <!-- Delete Button Modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content ">
+        <div class="modal-header bg-dark ">
+          <h5 class="delete-message modal-title text-light text-lg shadow-lg" id="deleteModalLabel">Enter
+            the Goal ID below to delete this goal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span class="text-light" aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-dark">
+          <form id='delete-goal-model-btn'>
+            <input class="w-75" type="text" name="deleteId" id="deleteId" placeholder="5fa59e8c3fb0400d8caa9b87">
+            <input id='delete-goal-model-btn' class="w-25 btn btn-success  shadow-lg float-right" type="submit"
+              value="DELETE GOAL">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

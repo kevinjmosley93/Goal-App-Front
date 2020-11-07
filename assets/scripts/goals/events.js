@@ -7,8 +7,6 @@ const createGoalClick = (event) => {
   event.preventDefault();
   const form = event.target;
   const data = getFormInfo(form);
-  console.log("event data is", form);
-
   api.createGoal(data).then(ui.goalCreatedPass).catch(ui.allGoalFailure);
 };
 const allGoalsClick = (event) => {
@@ -22,13 +20,18 @@ const updateGoalClick = (event) => {
   event.preventDefault();
   const form = event.target;
   const data = getFormInfo(form);
-  console.log("events data update:", store);
-  console.log("events data store user:", store.user._id);
-  api.updateGoal(data).then(ui.goalUpdatePass);
+  api.updateGoal(data).then(ui.goalUpdatePass).catch(ui.allGoalFailure);
+};
+const deleteGoalClick = (event) => {
+  event.preventDefault();
+  const form = event.target;
+  const data = getFormInfo(form);
+  api.deleteGoal(data).then(ui.deleteGoalPass).catch(ui.allGoalFailure);
 };
 
 module.exports = {
   createGoalClick,
   allGoalsClick,
   updateGoalClick,
+  deleteGoalClick,
 };

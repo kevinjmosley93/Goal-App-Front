@@ -2,7 +2,6 @@ const config = require("./../config");
 const store = require("../store");
 
 const createGoal = (data) => {
-  console.log("user is:", store.user);
   return $.ajax({
     url: `${config.apiUrl}/goals`,
     method: "POST",
@@ -25,8 +24,6 @@ const getAllGoals = () => {
 };
 
 const updateGoal = (data) => {
-  console.log("api data ", store.goal);
-
   return $.ajax({
     url: `${config.apiUrl}/goals/${store.goal._id}`,
     method: "PATCH",
@@ -37,8 +34,19 @@ const updateGoal = (data) => {
   });
 };
 
+const deleteGoal = (data) => {
+  return $.ajax({
+    url: `${config.apiUrl}/goals/${store.goal._id}`,
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${store.user.token}`,
+    },
+    data: data,
+  });
+};
 module.exports = {
   createGoal,
   getAllGoals,
   updateGoal,
+  deleteGoal,
 };

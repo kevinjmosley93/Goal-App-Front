@@ -3,20 +3,17 @@ const store = require("../store");
 const goalCreatedPass = () => {
   $("#goal-message").text("Goal Created! Click anywhere to close!");
   $("#goal-form").trigger("reset");
+  $("#success-goal-message").text("");
 };
 
 const allGoalSuccess = (res) => {
   $("#success-goal-message").text("All your goals are below!");
-  // $(".change-password-model-btn").hide();
+  $("#goal-message").text("");
+  //set all of the goals to a variable
   const allGoals = res.goal;
+  //loop through all goals and append each one in a card
   allGoals.forEach((goal) => {
-    console.log("ui goal id:", goal._id);
-  });
-
-  allGoals.forEach((goal) => {
-    const selector = "#goals";
-    console.log("each goal:", goal);
-    $(selector).append(`
+    $("#goals").append(`
 <div class="row ">
     <div class="col">
       <div class="card bg-dark container bd w-50 shadow-lg">
@@ -26,11 +23,14 @@ const allGoalSuccess = (res) => {
           <h6 class="pt-3 pb-3 card-text">Goal: ${goal.goalText}</h6>
           <h6 class="pt-3 pb-3 card-text">Obstacles: ${goal.obstacles}</h6>
           <small class='text-secondary shadow-lg'>Complete By: ${goal.finishBy}</small>
+          <small class='text-secondary float-right shadow-lg'>Goal ID: ${goal._id}</small>
           <br>
-            <button type="button" class="btn btn-success shadow-lg float-left" data-toggle="modal" data-target="#updateModal">
-    UPDATE GOAL
-  </button>
-          <input id='delete-goal-model-btn' class="btn btn-success  shadow-lg float-right" type="submit" value="DELETE GOAL">
+          <button type="button" class="btn btn-success shadow-lg float-left" data-toggle="modal" data-target="#updateModal">
+          UPDATE GOAL
+          </button>
+          <button type="button" class="btn float-right shadow-lg btn-success" data-toggle="modal"     data-target="#deleteModal">
+          DELETE
+          </button>
         </div>
       </div>
     </div>
@@ -38,23 +38,28 @@ const allGoalSuccess = (res) => {
   <br>
     `);
     store.goal = goal;
-    const newGoalId = goal._id;
-
-    console.log("all goals data", newGoalId);
   });
-
-  // $(selector).empty();
-  // // Loop each doctor object and add it to result area
-  // $.each(res.goal, (index, goals) => {
-  //   appendGoal(selector, goals);
-  // });
 };
 
-const goalUpdatePass = (res) => {
+const goalUpdatePass = () => {
   const goal = store.goal;
-  console.log("ui data:", goal);
-  $("#update-goal-message").text("Goal Updated! Click anywhere to close!");
+
+  $("#update-goal-message").text(
+    "Goal Updated! Click anywhere to check your goals!"
+  );
   $("#update-goal-form").trigger("reset");
+  $("#success-goal-message").text("");
+  $("#goals").text("");
+};
+const deleteGoalPass = (res) => {
+  store.goal = {};
+  res = store.goal;
+  $(".delete-message").text(
+    "Goal deleted successfully! Make sure you set another one soon!"
+  );
+  $("#delete-goal-model-btn").trigger("reset");
+  $("#success-goal-message").text("");
+  $("#goals").text("");
 };
 
 const allGoalFailure = (res) => {
@@ -64,5 +69,6 @@ module.exports = {
   goalCreatedPass,
   allGoalSuccess,
   goalUpdatePass,
+  deleteGoalPass,
   allGoalFailure,
 };

@@ -8,8 +8,6 @@ const signUpClick = (event) => {
   const form = event.target;
   const data = getFormInfo(form);
   api.signUp(data).then(ui.signUpPass).catch(ui.signUpFail);
-  console.log("data is:", data);
-  console.log("event is:", event);
 };
 
 const signInClick = (event) => {

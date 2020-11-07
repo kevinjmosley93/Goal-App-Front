@@ -1,11 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
+$font_family_1: "Titillium Web", sans-serif;
+
 * {
-  font-family: "Titillium Web", sans-serif;
-}
-input:hover {
-  margin: 1px;
-}
-.both-forms {
-  display: flex;
+  font-family: $font_family_1;
 }
