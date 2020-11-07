@@ -3928,7 +3928,7 @@ module.exports = getFormFields;
 
 var apiUrl = void 0;
 var apiUrls = {
-  production: "https://track-a-goal-app.herokuapp.com/",
+  production: "https://track-a-goal-app.herokuapp.com",
   development: "http://localhost:4741"
 };
 
