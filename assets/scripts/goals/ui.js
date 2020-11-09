@@ -39,6 +39,8 @@ const allGoalSuccess = (res) => {
     `);
     store.goal = goal;
   });
+  $("#update-goal-form").trigger("reset");
+  $("#update-goal-message").text("");
 };
 
 const goalUpdatePass = () => {
